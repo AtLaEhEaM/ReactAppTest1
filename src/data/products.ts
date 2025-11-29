@@ -10,7 +10,6 @@ export const products: Product[] = [
     featured: true,
     calories: 520,
     deal: '10% off on cakes — 1st of every month',
-    ingredients: ['cocoa', 'flour', 'sugar', 'eggs'],
   }),
   createProduct({
     title: 'Classic Sourdough',

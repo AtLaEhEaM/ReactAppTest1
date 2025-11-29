@@ -106,4 +106,8 @@ section, footer, .section-heading, h2, h3 {
   .featured-deals-inner{flex-direction:column}
   .left-split,.right-split{width:100%}
   .chocolate-large .product-image{height:200px}
+  /* Mobile: hide navigation links so only the bakery name (brand) shows */
+  .site-header nav{display:none}
+  .nav-inner{justify-content:flex-start}
+  .brand{margin-right:auto}
 }
