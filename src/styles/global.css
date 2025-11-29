@@ -1,0 +1,109 @@
+:root{
+  --bg: #f0e6db; /* warm wood tone */
+  --muted: #6b4f3b;
+  --accent: #8b5a3c;
+  --wood-dark: #3b2a1f;
+  --wood-contrast: #f7efe7;
+  --card: #ffffff;
+  --container: 1100px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.site-root{background-image:repeating-linear-gradient(90deg, rgba(0,0,0,0.02) 0 1px, transparent 1px 40px), linear-gradient(180deg, #f6efe3, #f0e6db);
+}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--muted); margin:0}
+.container{max-width:var(--container); margin:0 auto; padding:2rem}
+
+/* Custom cursor: muffin (16x16). Hotspot at 8 8, fallback to pointer */
+html, body, a, button, input, textarea {
+  /* use 32x32 cursor, hotspot centered at 16,16 */
+  cursor: url('/muffin-32.svg') 16 16, auto;
+}
+
+/* Nav */
+.site-header{position:sticky; top:0; z-index:40; backdrop-filter:blur(6px); background:rgba(255,255,255,0.6); box-shadow:0 2px 8px rgba(15,15,15,0.04)}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem}
+.brand{font-weight:700; color:var(--accent); text-decoration:none}
+.site-header nav a{margin-left:1rem; color:#444; text-decoration:none; padding:0.6rem}
+.site-header nav a:hover{color:var(--accent); transform:scale(1.02)}
+
+/* Section sizing */
+.section-base{display:flex; align-items:center; justify-content:center; padding-top:3.5rem}
+
+/* Specific section heights */
+.hero-section{min-height:80vh; position:relative; text-align:center; color:#fff; display:flex; align-items:flex-start}
+.featured-deals-section{min-height:80vh}
+.about-section{min-height:40vh}
+
+/* Hero visuals */
+.hero-bg{position:absolute; inset:0; background-image:url('/hero.jpg'); background-size:cover; background-position:center; filter:brightness(0.6); width:100%}
+.hero-inner{position:relative; z-index:2; width:100%; margin:0; top:40vh}
+.hero-title{font-size:3rem; margin:0 0 0.5rem 0; animation:slideUp 800ms ease both}
+.hero-tag{margin:0 0 1rem 0; animation:fadeIn 1000ms ease both}
+.hero-ctas .btn{margin:0 0.5rem}
+
+/* Buttons */
+.btn{display:inline-block; padding:0.6rem 1rem; border-radius:999px; text-decoration:none}
+.btn.primary{background:var(--accent); color:#fff}
+.btn.ghost{background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.2)}
+.btn:hover{transform:scale(1.03)}
+
+.featured-area .featured-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; width:100%}
+
+/* Featured equal split layout */
+.featured-deals-inner{display:flex; gap:1rem; align-items:stretch}
+.left-split,.right-split{flex:1; display:flex; flex-direction:column}
+
+/* Primary featured two-column area */
+.featured-main{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-bottom:1rem}
+.featured-main .product-card{max-width:none; margin:0; height:100%}
+.featured-main .product-image{height:360px; object-fit:cover}
+.featured-main .product-title{font-size:1.25rem; text-align:center}
+
+.menu-search{display:flex; justify-content:center; margin-bottom:0.75rem}
+.menu-search .search-input{display:inline-flex; align-items:center; gap:0.6rem; background:var(--card); padding:0.5rem 0.7rem; border-radius:999px; box-shadow:0 6px 18px rgba(15,15,15,0.05); width:100%; max-width:720px}
+.menu-search .search-input input{border:0; outline:none; font-size:0.95rem}
+
+/* Menu grid */
+.menu-section{flex-direction:column}
+.menu-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; width:100%}
+.product-card{background:var(--card); border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(20,20,20,0.06); display:flex; flex-direction:column; transition:transform 220ms ease, box-shadow 220ms ease; width:100%; max-width:420px; margin:0 auto}
+.product-card:hover{transform:translateY(-6px) scale(1.02)}
+.product-image{width:100%; height:180px; object-fit:cover}
+.product-body{padding:1rem}
+
+/* Deal */
+.deals-section .deal-card.single{background:var(--card); padding:1rem; border-radius:12px; box-shadow:0 8px 20px rgba(20,20,20,0.06); text-align:center}
+
+.deal-badge{background:#fff6f4; color:var(--accent); padding:0.35rem 0.6rem; border-radius:999px; display:inline-block; margin-bottom:0.5rem; font-weight:600}
+.product-meta{display:flex; gap:0.5rem; align-items:center}
+.calories{color:var(--muted); font-size:0.95rem}
+
+.about-section{flex-direction:column; margin-top: 8rem;}
+
+/* Contact footer */
+.contact-footer{background:linear-gradient(180deg,var(--wood-dark), #2f2319); color:var(--wood-contrast); padding:2rem 0}
+.contact-inner{display:grid; grid-template-columns:1fr 420px; gap:1.5rem}
+.contact-form label{display:block; margin-bottom:0.5rem}
+.contact-form input, .contact-form textarea{width:100%; padding:0.6rem; border-radius:8px; border:1px solid #eee}
+
+.site-foot-note{text-align:center; padding:1rem; color:var(--muted)}
+
+/* Prevent anchored headings from being hidden under the sticky header */
+section, footer, .section-heading, h2, h3 {
+  scroll-margin-top: 84px;
+}
+
+/* Animations */
+@keyframes slideUp{from{opacity:0; transform:translateY(24px)} to{opacity:1; transform:none}}
+@keyframes fadeIn{from{opacity:0} to{opacity:1}}
+
+@media(max-width:900px){
+  .contact-inner{grid-template-columns:1fr}
+  .hero-title{font-size:2rem}
+  section{padding:1.5rem 1rem}
+  .hero-inner{top:20vh}
+  .featured-deals-inner{flex-direction:column}
+  .left-split,.right-split{width:100%}
+  .chocolate-large .product-image{height:200px}
+}

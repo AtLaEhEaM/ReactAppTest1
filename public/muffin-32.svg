@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" aria-hidden="true">
+  <title>Muffin</title>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="64" height="64" fill="none"/>
+    <path d="M12 38c0 8.8 7.2 16 16 16s16-7.2 16-16H12z" fill="#8b5a3c"/>
+    <path d="M8 34c0-9.9 8.1-18 18-18 4.8 0 9.1 1.8 12.4 4.8C40.5 20.1 44.9 22 50 22c6.1 0 11 5 11 11 0 2.2-.6 4.3-1.6 6.1C58.1 40.8 54.5 44 50 44H14c-2.2 0-4.2-.6-5.9-1.6C8.6 39.9 8 37.9 8 35.8V34z" fill="#d9a66b"/>
+    <circle cx="22" cy="25" r="2" fill="#7a3f2a"/>
+    <circle cx="30" cy="20" r="2" fill="#7a3f2a"/>
+    <circle cx="40" cy="24" r="2" fill="#7a3f2a"/>
+  </g>
+</svg>
